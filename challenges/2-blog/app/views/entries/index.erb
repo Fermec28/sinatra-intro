@@ -1,0 +1,22 @@
+<div class="container">
+	<h1>Hola aqui nuestros post</h1>
+	<ul>
+		
+		<% @entries.each do |entry|%>
+		
+			<li>
+				<div class="jumbotron">
+					<h3><a href="/entries/<%= entry.id%>"><%= entry.title%></a></h3>
+					<!--
+					<% entry.tags do |tag|%>
+						<p><%= tag %></p>
+					<%end%>
+					-->
+					<p><%= entry.autor %></p>
+				<div>
+			</li>
+		
+		<%end%>
+		
+	</ul>
+</div>

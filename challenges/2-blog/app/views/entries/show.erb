@@ -1,0 +1,10 @@
+<div class="jumbotron">
+	<h1><%= @entry.title%></h1>
+	<h2><%= @entry.content%></h2>
+ 	<h3><%= @entry.autor %></h3> 						
+	<% @entry.tags.each do |tag|%>
+	<span> <a href="/tags/<%=tag.id%>/entries"> <%= tag.content %> </a></span>
+	<%end%>
+					
+					
+<div>

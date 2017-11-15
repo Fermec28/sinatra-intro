@@ -1,0 +1,31 @@
+<div class="container">
+<h1>Hola tu.... deseas postear  algo nuevo?</h1>
+
+<form action="/entries" method="POST" id="entryform">
+	<div class="form-group">
+	<label> Ingresa tu Nombre</label>
+	<input class="form-control" type="input" name="entry[autor]">
+	</div>
+	<div class="form-group">
+	<label>Ingresa el titulo del Post</label>
+	<input class="form-control" type="input" name="entry[title]">
+	</div>
+	<div class="form-group">
+	<label>Ingresa tu post</label>
+	 <textarea class="form-control" form ="entryform" name= "entry[content]" rows="3"></textarea>
+	</div>
+	<div class="form-group">
+	<input type="submit"  class="btn btn-primary" value="Post">
+	</div>
+</form>
+
+<h1>...O tal vez revisar nuestros posts ?</h1>
+
+	<form action="/entries" method="GET">
+		<input type="submit"  class="btn btn-primary" value="Ver Todos los Post">
+	</form>
+<h1>...O nuestros tags ?</h1>
+	<form action="/tags" method="GET">
+		<input type="submit"  class="btn btn-primary" value="Ver Todos los Tags">
+	</form>
+</div>

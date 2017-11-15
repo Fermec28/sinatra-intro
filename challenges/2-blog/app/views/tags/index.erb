@@ -1,0 +1,12 @@
+
+<div class="container">
+<h1>Hola aqui nuestros Tags</h1>
+<ul>
+	<div class="jumbotron">
+		<% @tags.each do |tag|%>
+			<li><h3><a href="/tags/<%=tag.id%>/entries"><%= tag.content%></a></h3></li>
+		<%end%>
+	</div>
+</ul>
+
+</div>
