@@ -1,18 +1,27 @@
 <div class="container">
 <h1>Hola tu.... deseas postear  algo nuevo?</h1>
 
+<% if @errors
+ @errors.each do |error|%>
+	<div class="alert alert-warning">
+  		<strong>Warning!</strong> <%= error%>
+	</div>
+<% end
+end%>
+
+
 <form action="/entries" method="POST" id="entryform">
 	<div class="form-group">
 	<label> Ingresa tu Nombre</label>
-	<input class="form-control" type="input" name="entry[autor]">
+	<input class="form-control" type="input" name="entry[autor]" placeholder="Autor">
 	</div>
 	<div class="form-group">
 	<label>Ingresa el titulo del Post</label>
-	<input class="form-control" type="input" name="entry[title]">
+	<input class="form-control" type="input" name="entry[title]" placeholder="Title">
 	</div>
 	<div class="form-group">
 	<label>Ingresa tu post</label>
-	 <textarea class="form-control" form ="entryform" name= "entry[content]" rows="3"></textarea>
+	 <textarea class="form-control" form ="entryform" name= "entry[content]" rows="3" placeholder="Content"></textarea>
 	</div>
 	<div class="form-group">
 	<input type="submit"  class="btn btn-primary" value="Post">

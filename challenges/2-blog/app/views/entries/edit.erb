@@ -1,0 +1,29 @@
+<div class="container">
+
+	<% if @errors
+ 		@errors.each do |error|%>
+		<div class="alert alert-warning">
+  			<strong>Warning!</strong> <%= error%>
+		</div>
+		<% end
+	end%>
+	
+	<form action="/entries/<%=@entry.id %>" method="post" id="entryform">
+		<input type="hidden" name="_method" value="PATCH">
+		<div class="form-group">
+		<label> Ingresa tu Nombre</label>
+		<input class="form-control" type="input" name="entry[autor]" value="<%=@entry.autor%>">
+		</div>
+		<div class="form-group">
+		<label>Ingresa el titulo del Post</label>
+		<input class="form-control" type="input" name="entry[title]" value="<%= @entry.title%>">
+		</div>
+		<div class="form-group">
+		<label>Ingresa tu post</label>
+		 <textarea class="form-control" form ="entryform" name= "entry[content]" rows="3"   ><%=@entry.content %></textarea>
+		</div>
+		<div class="form-group">
+		<input type="submit"  class="btn btn-primary" value="Edit">
+		</div>
+	</form>
+</div>

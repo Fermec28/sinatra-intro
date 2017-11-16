@@ -1,10 +1,18 @@
 <div class="jumbotron">
+	<a href="/entries/<%=@entry.id%>/edit"><button type="button" class="btn btn-info">Editar</button></a>
+    <form action="/entries/<%=@entry.id%>" method="POST">
+    	<input type="hidden" name="_method" value="DELETE">
+    	<input type="submit" class="btn btn-danger" value="Eliminar">
+    </form>
+
 	<h1><%= @entry.title%></h1>
 	<h2><%= @entry.content%></h2>
  	<h3><%= @entry.autor %></h3> 						
 	<% @entry.tags.each do |tag|%>
 	<span> <a href="/tags/<%=tag.id%>/entries"> <%= tag.content %> </a></span>
 	<%end%>
+
+
 					
 					
 <div>
