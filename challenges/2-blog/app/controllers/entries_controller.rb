@@ -24,8 +24,12 @@ post '/entries' do
  if entry.save
  	tags=entry.content.scan(/#\w+/)
  	tags.each do |tag|
- 		entry.tags.create(content: tag)
-
+ 		unless Tag.find_by(content: tag)
+ 			
+ 		 	entry.tags.create(content: tag)
+ 		 else
+ 		 	entry.tags << Tag.find_by(content: tag)
+ 		 end 
  	end
  end
  
